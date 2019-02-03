@@ -1,0 +1,45 @@
+.btn-primary {
+  flex: 1 1 auto;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px 20px;
+  @include border-radius(30px);
+  background-image: linear-gradient(to right, color(primary1) 0%, color(primary2) 50%, color(primary1) 100%);
+  background-size: 200% auto;
+  background-position: left center;
+  border: none;
+  @include box-shadow(0 10px 10px -5px rgba(0, 0, 0, 0.5));
+  font-weight: 500;
+  @include transition(background-position .4s);
+  outline: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-position: right center;
+  }
+
+  &:active {
+    outline: none;
+    @include box-shadow(0 6px 10px -5px rgba(0, 0, 0, 0.5));
+    @include transform(translateY(4px));
+  }
+}
+
+.btn-secondary {
+  @extend .btn-primary;
+  color: #FFF;
+  background-image: linear-gradient(to right, color(secondary1) 0%, color(secondary2) 50%, color(secondary1) 100%);
+}
+
+.btn-sm {
+  font-size: 11px;
+  padding: 6px 16px;
+  @include box-shadow(0 5px 5px -2px rgba(0, 0, 0, 0.5));
+
+  &:active {
+    outline: none;
+    @include box-shadow(0 3px 5px -2px rgba(0, 0, 0, 0.5));
+    @include transform(translateY(2px));
+  }
+}

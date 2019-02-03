@@ -1,7 +1,16 @@
+.person-view {
+  display:grid;
+  grid-template-columns: 300px 1fr;
+  grid-column-gap: 40px;
+  padding:30px;
+}
+
+
 header {
   display:grid;
   grid-template-columns: minmax(0,400px);
-  align-items: center;
+  grid-template-rows: auto 50px 1fr;
+  align-items: start;
   justify-content: center;
 }
 
@@ -10,7 +19,7 @@ header {
   width:100%;
   display:grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 30px;
+  grid-row-gap: 15px;
 
   .inputField {
     position: relative;
@@ -138,39 +147,9 @@ header {
 }
 
 
-.btn-primary {
-  flex: 1 1 auto;
-  font-size:16px;
-  color:#fff;
-  padding:10px 20px;
-  @include border-radius(30px);
-  background-image: linear-gradient(to right, color(primary1) 0%, color(primary2) 50%, color(primary1) 100%);
-  background-size: 200% auto;
-  background-position:left center;
-  border:none;
-  @include box-shadow(0 10px 10px -5px rgba(0,0,0,0.5));
-  font-weight: 500;
-  @include transition(background-position .4s);
-  outline:none;
-  margin-bottom:10px;
-  cursor:pointer;
-
-  &:hover {
-    background-position: right center;
-  }
-
-  &:active {
-    outline:none;
-    @include box-shadow(0 6px 10px -5px rgba(0,0,0,0.5));
-    @include transform(translateY(4px));
-  }
-}
-
-.btn-secondary {
-  @extend .btn-primary;
-  background-image: linear-gradient(to right, color(secondary1) 0%, color(secondary2) 50%, color(secondary1) 100%);
-}
 
 .apply-filters {
   margin-top:30px;
 }
+
+

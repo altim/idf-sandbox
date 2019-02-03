@@ -57,8 +57,8 @@
 		</header>
 		<section>
 			<header class="controls">
-				<button ui:field="toggle" class="btn btn-secondary toggle-view-mode">Switch View Mode</button>
-				<button ui:field="reset" class="btn btn-secondary reset">Reset Data Collection</button>
+				<button ui:field="toggle" class="btn btn-sm btn-secondary toggle-view-mode">Switch View Mode</button>
+				<button ui:field="reset" class="btn btn-sm btn-secondary reset">Reset Data Collection</button>
 			</header>
 			<dp:PersonCellList ui:field="personList"
 				styleName="grid-view"></dp:PersonCellList>

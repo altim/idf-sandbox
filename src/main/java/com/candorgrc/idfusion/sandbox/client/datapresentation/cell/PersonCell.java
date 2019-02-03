@@ -104,7 +104,7 @@ public class PersonCell extends AbstractCell<PersonJSO> {
 
 	/**
 	 * Cell XHTML Template.
-	 * 
+	 *
 	 * @designer: feel free to modify it in order to meet your expectations
 	 *
 	 */
