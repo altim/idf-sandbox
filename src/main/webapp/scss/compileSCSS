@@ -1,0 +1,3 @@
+#!/bin/bash
+sass --watch sandbox.scss:../../../../target/idf-sandbox-0.0.1-SNAPSHOT/scss/sandbox.css
+

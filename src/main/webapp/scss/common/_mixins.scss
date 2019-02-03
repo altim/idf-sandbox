@@ -1,0 +1,112 @@
+@mixin font($fontSize:false) {
+  font-family: 'Montserrat', sans-serif;
+  @if ($fontSize) {
+    font-size: $fontSize;
+  }
+}
+
+@mixin border-radius($radius:2px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+
+@mixin box-sizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin transition($params) {
+  -webkit-transition: $params;
+  -moz-transition: $params;
+  -o-transition: $params;
+  transition: $params;
+}
+
+@mixin transform($param) {
+  -webkit-transform: $param;
+  -moz-transform: $param;
+  -o-transform: $param;
+  transform: $param;
+}
+
+%backgroundGradient {
+  background: #f7f7f7; /* Old browsers */
+  background: -moz-linear-gradient(top, #f7f7f7 0%, #f1f0ee 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #f1f0ee 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f7f7f7 0%, #f1f0ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin breakpoint($point) {
+  @if $point == lg {
+    @media (max-width: 1400px) {
+      @content ;
+    }
+  }
+  @else if $point == desktop {
+    @media (max-width: 1200px) {
+      @content ;
+    }
+  } @else if $point == laptop {
+    @media (max-width: 992px) {
+      @content ;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 768px) {
+      @content ;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 500px) {
+      @content ;
+    }
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+//Mixin to remove the top space from text elements
+@mixin lhCrop($line-height) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
+//Placeholder color
+@mixin placeholderColor($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+}
